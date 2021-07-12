@@ -25,6 +25,8 @@ public class PositionController {
         return new ResponseEntity<>(positionRepository.findAll(), HttpStatus.OK);
     }
 
+
+    // get data from a service other
     @GetMapping("/category")
     public ResponseEntity<List<Object>> getCategory(){
         String url = "http://localhost:8080/demo/api/category";
