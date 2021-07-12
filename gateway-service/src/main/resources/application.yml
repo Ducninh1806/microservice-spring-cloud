@@ -1,0 +1,26 @@
+
+server:
+  port: 8080
+spring:
+  application:
+    name: gateway-service
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+zuul:
+  ignored-services: '*'
+  routes:
+    demo-service:
+      path: /demo/**
+      service-id: demo-service
+
+    test-service:
+      path: /test/**
+      service-id: test-service
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
